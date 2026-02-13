@@ -12,8 +12,9 @@
     </header>
 
     <main>
-        <div class="content">
-        <p>listen to the full story.</p>
+        <button onclick="readPage()">Listen to this page</button>
+        <button onclick="speechSynthesis.cancel()">Stop</button>
+        <article class="content">
          <p><span>One day the pain starts. I can't sit down, I can't walk, or stand, or get up without pain. When the pain gets better, I notice that my body is not the same. I'm constnatly in discomfort and too frequently in pain. So I have my first </span> office visit with Heather Abdalla <span>on</span> Dec 04, 2020. <span>The American health care system requires one visit with a “regular” doctor so you can get a referral to the “actual one” you need to meet. Of course the visit with a regular doctor didn't answer any questions. They gave me a referral and that was it.</span></p>
           <p><span>My</span>visit with Danielle Clair <span>is on </span>Dec 15, 2020<span> which is a week and a half after the referral. She points to muscle spasm as the cause for my problem and assumes that it will get better after a while.</span></p>
           <p><span>Almost a month passed and my body still feels broken. So I was referred to a</span>physical therapist <span>named</span> Sarah Patton <span>on</span> Jan 07, 2021. <span>But her institution provides PT that is not specific enough for my problem. I cancel the future appointments.</span></p>
@@ -34,10 +35,19 @@
          <p>Doctor's visit <span>was on</span> November 10, 2022. <span>I was hoping this was it. But the doctor said the skin was just fine. Now my physical therapist is really clueless.</span></p>
          <p>Physical therapy <span>continues.</span> November 17. November 24. <span>The physical therapist was trying everything she could. When nothing improved, she eventually sent me to, now my, fourth physical therapist to get back on pain exposure therapy.</span> December 2. <span>Obviously there was no progress. But now it was not worth the experience.</span>December 8. <span>I got back to the previous physical therapist. We discussed future treatments, seriously. She said that she couldn't figure out how to improve my condition. She recommended that I see the most famous specialist in NYC, Dr. Goldstein, who was 1,800 dollars per appointment.</span> December 15 <span>was my last physical therapy appointment. </p>
          <p><span>I go back home for a break and look back at all the times I spent on treatment. Total of</span><br>41 appointments on record. <br> So many more missing. <br> 5 different physical therapists. <br> 3 different doctors. <br> 2 different medications. <br> 2 shots of injection in the nerve. <br> In the span of 1,106 days. <span>After everything, my body still feels the same, constanlty in discomfort and too frequently in pain. But my mind is more exhausted than ever. Now I wasn't uncertain anymore. I was certain that the next doctor I'll see will not give me an answer. I was certain that I won't recover from this. Most of all, I have spent enough energy doubting this certainty. So I decide to end all treatment. That was</span> January 4, 2023. <span>3 years after my first doctor's visit.</span></p>
-        </div>
+        </article>
     
     </main>
 
-    <script src="script.js" defer></script>
+    <script src="script.js" defer>
+        function readPage() {
+        const text = document.querySelector("article").innerText;
+        const utterance = new SpeechSynthesisUtterance(text);
+         speechSynthesis.speak(utterance);
+
+        utterance.rate = 1;
+        utterance.pitch = 1;
+}
+    </script>
 </body>
 </html>
