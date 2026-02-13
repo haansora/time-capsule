@@ -39,15 +39,25 @@
     
     </main>
 
-    <script src="script.js" defer>
+    <script defer>
         function readPage() {
-        const text = document.querySelector("article").innerText;
-        const utterance = new SpeechSynthesisUtterance(text);
-         speechSynthesis.speak(utterance);
+         const article = document.querySelector("article");
+         if (!article) return;
 
+        // Stop anything currently speaking
+        speechSynthesis.cancel();
+
+        const text = article.innerText;
+
+        const utterance = new SpeechSynthesisUtterance(text);
+
+        // Optional tuning
         utterance.rate = 1;
         utterance.pitch = 1;
+        utterance.volume = 1;
+
+        speechSynthesis.speak(utterance);
 }
-    </script>
+</script>
 </body>
 </html>
