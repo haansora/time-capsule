@@ -20,3 +20,43 @@ span{
     font-size: 2em;
     line-height: 1.5em;
 }
+
+#might{
+    color: rgb(54, 54, 54);
+    opacity:100%;
+}
+
+#want{
+    color: rgb(117, 117, 117);
+    opacity:100%;
+}
+
+#to{
+    color: rgb(153, 153, 153);
+    opacity:100%;
+}
+
+#listen{
+    color: rgb(174, 174, 174);
+    opacity:100%;
+}
+
+#to2{
+    color: rgb(214, 214, 214);
+    opacity:100%;
+}
+
+#the{
+    color: rgb(224, 224, 224);
+    opacity:100%;
+}
+
+#full{
+    color: rgb(240, 240, 240);
+    opacity:100%;
+}
+
+#story{
+    color: rgb(250, 247, 247);
+    opacity:50%;
+}
